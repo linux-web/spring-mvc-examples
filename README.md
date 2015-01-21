@@ -1,7 +1,7 @@
 
 ## Spring MVC 使用示例
 
-> 通过简单的示例岩石Spring MVC的强大功能。
+> 通过简单的示例演示Spring MVC的强大功能。
 
 ### 项目内容
 

@@ -14,7 +14,6 @@
 	<name>Spring MVC Examples Maven Webapp</name>
 
 	<properties>
-		<org.springframework-version>4.1.0.RELEASE</org.springframework-version>
 		<org.springframework.security-version>3.2.0.RELEASE</org.springframework.security-version>
 		<org.aspectj-version>1.8.1</org.aspectj-version>
 	</properties>
@@ -256,10 +255,18 @@
 				<artifactId>aspectj-maven-plugin</artifactId>
 				<!-- 只能使用1.2版本，因为1.3版本好像不能与TIDs兼容 -->
 				<version>1.2</version>
-				<!-- <dependencies> <dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjrt</artifactId> 
-					<version>${org.aspectj-version}</version> </dependency> <dependency> <groupId>org.aspectj</groupId> 
-					<artifactId>aspectjtools</artifactId> <version>${org.aspectj-version}</version> 
-					</dependency> </dependencies> -->
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjrt</artifactId>
+						<version>${org.aspectj-version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>${org.aspectj-version}</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<goals>

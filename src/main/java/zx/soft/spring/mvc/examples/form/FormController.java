@@ -20,7 +20,6 @@ import zx.soft.spring.mvc.extensions.ajax.AjaxUtils;
 public class FormController {
 
 	// Invoked on every request
-
 	@ModelAttribute
 	public void ajaxAttribute(WebRequest request, Model model) {
 		model.addAttribute("ajaxRequest", AjaxUtils.isAjaxRequest(request));
@@ -28,20 +27,18 @@ public class FormController {
 
 	// Invoked initially to create the "form" attribute
 	// Once created the "form" attribute comes from the HTTP session (see @SessionAttributes)
-
 	@ModelAttribute("formBean")
 	public FormBean createFormBean() {
 		return new FormBean();
 	}
-	
-	@RequestMapping(method=RequestMethod.GET)
+
+	@RequestMapping(method = RequestMethod.GET)
 	public void form() {
 	}
 
-	@RequestMapping(method=RequestMethod.POST)
-	public String processSubmit(@Valid FormBean formBean, BindingResult result, 
-								@ModelAttribute("ajaxRequest") boolean ajaxRequest, 
-								Model model, RedirectAttributes redirectAttrs) {
+	@RequestMapping(method = RequestMethod.POST)
+	public String processSubmit(@Valid FormBean formBean, BindingResult result,
+			@ModelAttribute("ajaxRequest") boolean ajaxRequest, Model model, RedirectAttributes redirectAttrs) {
 		if (result.hasErrors()) {
 			return null;
 		}
@@ -57,8 +54,8 @@ public class FormController {
 			// store a success message for rendering on the next request after redirect
 			// redirect back to the form to render the success message along with newly bound values
 			redirectAttrs.addFlashAttribute("message", message);
-			return "redirect:/form";			
+			return "redirect:/form";
 		}
 	}
-	
+
 }

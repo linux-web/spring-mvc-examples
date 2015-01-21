@@ -9,8 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 
-import zx.soft.spring.mvc.examples.validation.ValidationController;
-
 public class ValidationControllerTests {
 
 	private MockMvc mockMvc;
@@ -22,14 +20,13 @@ public class ValidationControllerTests {
 
 	@Test
 	public void validateSuccess() throws Exception {
-		this.mockMvc.perform(get("/validate?number=3&date=2029-07-04"))
-				.andExpect(content().string("No errors"));
+		this.mockMvc.perform(get("/validate?number=3&date=2029-07-04")).andExpect(content().string("No errors"));
 	}
 
 	@Test
 	public void validateErrors() throws Exception {
-		this.mockMvc.perform(get("/validate?number=3&date=2010-07-01"))
-				.andExpect(content().string("Object has validation errors"));
+		this.mockMvc.perform(get("/validate?number=3&date=2010-07-01")).andExpect(
+				content().string("Object has validation errors"));
 	}
 
 }

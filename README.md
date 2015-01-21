@@ -26,5 +26,5 @@
 
 访问下面地址：
 
-http://localhost:port/spring-mvc-example/
+http://localhost:port/spring-mvc-examples/
 

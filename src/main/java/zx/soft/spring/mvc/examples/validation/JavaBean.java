@@ -10,14 +10,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class JavaBean {
-	
+
 	@NotNull
 	@Max(5)
 	private Integer number;
 
 	@NotNull
 	@Future
-	@DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date date;
 
 	public Integer getNumber() {

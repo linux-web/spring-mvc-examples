@@ -18,8 +18,6 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import zx.soft.spring.mvc.examples.form.FormController;
-
 public class FormControllerTests {
 
 	private MockMvc mockMvc;

@@ -12,12 +12,13 @@ import zx.soft.spring.mvc.examples.data.custom.CustomArgumentController;
 import zx.soft.spring.mvc.examples.data.custom.CustomArgumentResolver;
 
 public class CustomArgumentControllerTests {
+
 	private MockMvc mockMvc;
 
 	@Before
 	public void setup() throws Exception {
-		this.mockMvc = standaloneSetup(new CustomArgumentController())
-				.setCustomArgumentResolvers(new CustomArgumentResolver()).build();
+		this.mockMvc = standaloneSetup(new CustomArgumentController()).setCustomArgumentResolvers(
+				new CustomArgumentResolver()).build();
 	}
 
 	@Test

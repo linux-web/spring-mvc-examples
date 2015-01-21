@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class JavaBean {
-	
+
 	@NotNull
 	private String foo;
 
@@ -13,6 +13,7 @@ public class JavaBean {
 	private String fruit;
 
 	public JavaBean() {
+		//
 	}
 
 	public JavaBean(String foo, String fruit) {
@@ -35,7 +36,7 @@ public class JavaBean {
 	public void setFruit(String fruit) {
 		this.fruit = fruit;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "JavaBean {foo=[" + foo + "], fruit=[" + fruit + "]}";

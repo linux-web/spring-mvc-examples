@@ -3,9 +3,9 @@ package zx.soft.spring.mvc.examples.data;
 public class JavaBean {
 
 	private String param1;
-	
+
 	private String param2;
-	
+
 	private String param3;
 
 	public String getParam1() {

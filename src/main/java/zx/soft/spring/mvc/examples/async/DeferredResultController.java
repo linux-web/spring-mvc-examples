@@ -21,9 +21,9 @@ public class DeferredResultController {
 
 	private final Queue<DeferredResult<String>> exceptionQueue = new ConcurrentLinkedQueue<DeferredResult<String>>();
 
-
 	@RequestMapping("/deferred-result/response-body")
-	public @ResponseBody DeferredResult<String> deferredResult() {
+	public @ResponseBody
+	DeferredResult<String> deferredResult() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.responseBodyQueue.add(result);
 		return result;
@@ -37,14 +37,16 @@ public class DeferredResultController {
 	}
 
 	@RequestMapping("/deferred-result/exception")
-	public @ResponseBody DeferredResult<String> deferredResultWithException() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithException() {
 		DeferredResult<String> result = new DeferredResult<String>();
 		this.exceptionQueue.add(result);
 		return result;
 	}
 
 	@RequestMapping("/deferred-result/timeout-value")
-	public @ResponseBody DeferredResult<String> deferredResultWithTimeoutValue() {
+	public @ResponseBody
+	DeferredResult<String> deferredResultWithTimeoutValue() {
 
 		// Provide a default result in case of timeout and override the timeout value
 		// set in src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
@@ -52,7 +54,7 @@ public class DeferredResultController {
 		return new DeferredResult<String>(1000L, "Deferred result after timeout");
 	}
 
-	@Scheduled(fixedRate=2000)
+	@Scheduled(fixedRate = 2000)
 	public void processQueues() {
 		for (DeferredResult<String> result : this.responseBodyQueue) {
 			result.setResult("Deferred result");

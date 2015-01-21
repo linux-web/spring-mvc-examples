@@ -15,9 +15,10 @@ public class CustomArgumentController {
 	void beforeInvokingHandlerMethod(HttpServletRequest request) {
 		request.setAttribute("foo", "bar");
 	}
-	
-	@RequestMapping(value="/data/custom", method=RequestMethod.GET)
-	public @ResponseBody String custom(@RequestAttribute("foo") String foo) {
+
+	@RequestMapping(value = "/data/custom", method = RequestMethod.GET)
+	public @ResponseBody
+	String custom(@RequestAttribute("foo") String foo) {
 		return "Got 'foo' request attribute value '" + foo + "'";
 	}
 

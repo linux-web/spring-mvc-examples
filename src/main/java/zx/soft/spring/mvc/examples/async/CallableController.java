@@ -14,9 +14,9 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 @RequestMapping("/async/callable")
 public class CallableController {
 
-
 	@RequestMapping("/response-body")
-	public @ResponseBody Callable<String> callable() {
+	public @ResponseBody
+	Callable<String> callable() {
 
 		return new Callable<String>() {
 			@Override
@@ -42,8 +42,8 @@ public class CallableController {
 	}
 
 	@RequestMapping("/exception")
-	public @ResponseBody Callable<String> callableWithException(
-			final @RequestParam(required=false, defaultValue="true") boolean handled) {
+	public @ResponseBody
+	Callable<String> callableWithException(final @RequestParam(required = false, defaultValue = "true") boolean handled) {
 
 		return new Callable<String>() {
 			@Override
@@ -52,8 +52,7 @@ public class CallableController {
 				if (handled) {
 					// see handleException method further below
 					throw new IllegalStateException("Callable error");
-				}
-				else {
+				} else {
 					throw new IllegalArgumentException("Callable error");
 				}
 			}
@@ -61,7 +60,8 @@ public class CallableController {
 	}
 
 	@RequestMapping("/custom-timeout-handling")
-	public @ResponseBody WebAsyncTask<String> callableWithCustomTimeoutHandling() {
+	public @ResponseBody
+	WebAsyncTask<String> callableWithCustomTimeoutHandling() {
 
 		Callable<String> callable = new Callable<String>() {
 			@Override

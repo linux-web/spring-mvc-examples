@@ -10,8 +10,6 @@ import org.junit.Test;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.test.web.servlet.MockMvc;
 
-import zx.soft.spring.mvc.examples.redirect.RedirectController;
-
 public class RedirectControllerTests {
 
 	private MockMvc mockMvc;
